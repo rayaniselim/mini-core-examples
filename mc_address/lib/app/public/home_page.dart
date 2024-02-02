@@ -58,13 +58,14 @@ class _HomePageState extends State<HomePage> {
                         fetchAddressAction(cep);
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                              builder: (context) => PageDropDown(
-                                    onSubmitted: (String cep) {
-                                      Navigator.pop(context);
-                                    },
-                                    address: addressState.value,
-                                    cepInput: cep,
-                                  )),
+                            builder: (context) => PageDropDown(
+                              onSubmitted: (String cep) {
+                                Navigator.pop(context);
+                              },
+                              address: addressState.value,
+                              cepInput: cep,
+                            ),
+                          ),
                         );
                       },
                     ),

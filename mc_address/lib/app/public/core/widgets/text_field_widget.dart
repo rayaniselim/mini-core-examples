@@ -13,7 +13,6 @@ class TextFieldWidget extends StatelessWidget {
     return TextField(
       controller: textController,
       onSubmitted: onSubmitted,
-
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
         hintText: 'EX: 01.345-678',
@@ -22,16 +21,38 @@ class TextFieldWidget extends StatelessWidget {
           icon: const Icon(
             Icons.search,
           ),
-          // funciona
           onPressed: () {
             onSubmitted(textController.text);
           },
         ),
+        enabledBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderSide: BorderSide(
+            color: Colors.black,
+            width: 1,
+          ),
+        ),
+        focusedBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderSide: BorderSide(
+            color: Colors.black,
+            width: 2,
+          ),
+        ),
+        errorBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderSide: BorderSide(
+            color: Colors.red,
+          ),
+        ),
+        focusedErrorBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderSide: BorderSide(
+            color: Colors.red,
+            width: 1.5,
+          ),
+        ),
       ),
-      // textInputAction: TextInputAction.search,
-      // onChanged: () {
-      // AddressRepository.fetchAddress;
-      // },
     );
   }
 }

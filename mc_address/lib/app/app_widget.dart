@@ -10,8 +10,8 @@ class Appwidget extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromARGB(255, 255, 255, 0)),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 80, 80, 78)),
         useMaterial3: true,
       ),
       home: const HomePage(),
