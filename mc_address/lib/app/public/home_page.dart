@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:mc_address/app/public/core/widgets/button.dart';
+
+import 'core/widgets/text_field_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    const SizedBox sizedBox = SizedBox(height: 30);
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
@@ -18,9 +22,7 @@ class HomePage extends StatelessWidget {
             ),
             backgroundColor: Colors.grey.shade200,
           ),
-          const SizedBox(
-            height: 30,
-          ),
+          sizedBox,
           Center(
             child: Column(
               children: [
@@ -31,39 +33,19 @@ class HomePage extends StatelessWidget {
                     fontSize: 22,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(24),
-                  child: TextFormField(
-                    decoration: const InputDecoration(
-                      hintText: 'EX: 01.345-678',
-                    ),
-                  ),
+                const Padding(
+                  padding: EdgeInsets.all(24),
+                  child: TextFieldWidget(),
                 ),
-                TextButton(
+                TextButtonWidget(
+                  color: Colors.amber,
+                  colorText: Colors.black,
+                  height: 40,
+                  width: 90,
+                  text: 'Pesquisar',
                   onPressed: () {},
-                  child: Container(
-                    height: 40,
-                    width: 90,
-                    decoration: const BoxDecoration(
-                      color: Colors.amber,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(6),
-                      ),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        'Pesquisar',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ),
-                  ),
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
+                sizedBox,
 
                 /// IMPLEMENTAR O VISIBILITY
                 Center(
@@ -84,31 +66,16 @@ class HomePage extends StatelessWidget {
                             const Text('Cidade:'),
                             const Text('Bairro:'),
                             const Text('Logradouro:'),
-                            const SizedBox(
-                              height: 30,
-                            ),
+                            sizedBox,
                             Center(
-                              child: TextButton(
-                                  onPressed: () {},
-                                  child: Container(
-                                    height: 40,
-                                    width: 90,
-                                    decoration: BoxDecoration(
-                                      color: Colors.red.shade500,
-                                      borderRadius: const BorderRadius.all(
-                                        Radius.circular(6),
-                                      ),
-                                    ),
-                                    child: const Center(
-                                      child: Text(
-                                        'limpar',
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                  )),
+                              child: TextButtonWidget(
+                                onPressed: () {},
+                                color: Colors.red.shade500,
+                                height: 40,
+                                width: 90,
+                                text: 'limpar',
+                                colorText: Colors.black,
+                              ),
                             )
                           ],
                         ),
