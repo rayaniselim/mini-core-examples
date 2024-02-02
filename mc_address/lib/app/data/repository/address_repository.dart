@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:uno/uno.dart';
 
@@ -17,8 +15,7 @@ class FetchAddressRepository implements AddressRepository {
       final response = await uno.get('https://viacep.com.br/ws/$cep/json/');
       await Future.delayed(const Duration(seconds: 1));
       if (response.status == 200) {
-        final jsonDecoded = json.decode(response.data);
-        return AddressModel.fromJson(jsonDecoded);
+        return AddressModel.fromJson(response.data);
       }
     } catch (e) {
       debugPrint(e.toString());

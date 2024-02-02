@@ -4,11 +4,14 @@ import 'package:mc_address/app/public/core/widgets/search.dart';
 
 class PageDropDown extends StatelessWidget {
   final void Function(String) onSubmitted;
+  final String cepInput;
+
   final AddressModel address;
   const PageDropDown({
     super.key,
     required this.onSubmitted,
     required this.address,
+    required this.cepInput,
   });
 
   @override
@@ -25,7 +28,7 @@ class PageDropDown extends StatelessWidget {
         elevation: 0,
       ),
       body: Search(
-        cep: address.gia,
+        cepInput: cepInput,
         uf: address.uf,
         cidade: address.localidade,
         bairro: address.bairro,

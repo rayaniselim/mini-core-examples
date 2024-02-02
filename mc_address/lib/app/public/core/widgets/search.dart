@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:mc_address/app/interactor/models/address_model.dart';
 import 'package:mc_address/app/public/core/widgets/button.dart';
 
 class Search extends StatelessWidget {
-  final String cep;
+  final String cepInput;
   final String uf;
   final String cidade;
   final String bairro;
   final String logradouro;
   const Search({
     super.key,
-    required this.cep,
+    required this.cepInput,
     required this.uf,
     required this.cidade,
     required this.bairro,
@@ -19,7 +18,6 @@ class Search extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AddressModel model;
     SizedBox sizedBox = const SizedBox(height: 10);
     return Center(
       child: Container(
@@ -38,7 +36,7 @@ class Search extends StatelessWidget {
                 children: [
                   const Text('CEP:'),
                   Text(
-                    cep,
+                    cepInput,
                   ),
                 ],
               ),

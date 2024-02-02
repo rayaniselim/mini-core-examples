@@ -47,3 +47,11 @@ class AddressModel {
     );
   }
 }
+
+
+/*
+ NAO PENSAR EM ESTRUTURA
+
+- 
+
+*/
